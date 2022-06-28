@@ -8,14 +8,20 @@ import "./SCSS/styles.scss";
 import Logo from "./assets/shared/logo.svg";
 import Hambuger from "./assets/shared/icon-hamburger.svg";
 
+// Pages
 import Landing from "./pages/Landing/Landing";
 import Destinations from "./pages/Destinations/Destinations";
+import Crew from "./pages/Crew/Crew";
+import Technology from "./pages/Technology/Technology";
 
 import BGMobile from "./assets/home/background-home-mobile.jpg";
 import BGDestination from "./assets/destination/background-destination-mobile.jpg";
+import BGCrew from "./assets/crew/background-crew-mobile.jpg";
+import BGTech from "./assets/technology/background-technology-mobile.jpg";
 
 const Main = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   height: 100%;
@@ -59,6 +65,26 @@ const App = () => {
             }
           />
           <Route path="/destinations" element={<Destinations Data={Data} />} />
+          <Route
+            path="/crew"
+            element={
+              <Crew
+                Data={Data}
+                handleBackground={handleBackground}
+                BGCrew={BGCrew}
+              />
+            }
+          />
+          <Route
+            path="/technology"
+            element={
+              <Technology
+                Data={Data}
+                handleBackground={handleBackground}
+                BGTech={BGTech}
+              />
+            }
+          />
         </Routes>
       </Main>
     </div>

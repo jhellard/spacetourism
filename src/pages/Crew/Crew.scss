@@ -1,0 +1,104 @@
+.crew {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__pick {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+
+    span {
+      font-family: "Barlow Condensed", sans-serif;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 5px;
+      margin: 0;
+      margin-right: 1rem;
+      margin-bottom: 1.25rem;
+      color: $white;
+      opacity: 25%;
+    }
+
+    h5 {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 2.7px;
+      margin: 0;
+      margin-bottom: 1.25rem;
+      color: $white;
+    }
+  }
+
+  &__line {
+    width: 90%;
+    border-bottom: 1px solid $darkgray;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+
+    &__member {
+      background-color: $white;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 1rem 0.75rem;
+      opacity: 0.17;
+
+      &:hover {
+        border-bottom: 2px solid $lightblue;
+      }
+
+      &__active {
+        color: $white;
+        opacity: 1;
+        border-bottom: 2px solid $white;
+      }
+    }
+  }
+
+  &__selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__role {
+      color: $white;
+      font-weight: 400;
+      font-family: "Bellefair", serif;
+      font-size: 1rem;
+      margin: 1rem;
+      opacity: 0.5;
+    }
+
+    &__name {
+      color: $white;
+      font-weight: 400;
+      font-family: "Bellefair", serif;
+      font-size: 24px;
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+
+    &__bio {
+      font-family: "Barlow", sans-serif;
+      font-size: 15px;
+      color: $lightblue;
+      line-height: 25px;
+      text-align: center;
+      margin: 0 1.5rem 3rem 1.5rem;
+    }
+  }
+}

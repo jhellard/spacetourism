@@ -1,0 +1,110 @@
+// I don't like doing this here, but it's good for now
+.main {
+  &__header {
+    margin-bottom: 1rem;
+  }
+}
+
+.tech {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__pick {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+
+    span {
+      font-family: "Barlow Condensed", sans-serif;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 5px;
+      margin: 0;
+      margin-right: 1rem;
+      margin-bottom: 1.25rem;
+      color: $white;
+      opacity: 25%;
+    }
+
+    h5 {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 2.7px;
+      margin: 0;
+      margin-bottom: 1.25rem;
+      color: $white;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+
+    &__member {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: 1rem 0.75rem;
+      border: 1px solid $darkgray;
+
+      span {
+        color: $white;
+      }
+
+      &__active {
+        background-color: $white;
+        opacity: 1;
+
+        span {
+          color: $darkblue;
+        }
+      }
+    }
+  }
+
+  &__selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__term {
+      color: $lightblue;
+      font-weight: 400;
+      font-family: "Barlow Condensed", sans-serif;
+      letter-spacing: 2.35px;
+      font-size: 14px;
+      margin: 1rem;
+      opacity: 0.5;
+    }
+
+    &__name {
+      color: $white;
+      font-weight: 400;
+      font-family: "Bellefair", serif;
+      font-size: 24px;
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+
+    &__description {
+      font-family: "Barlow", sans-serif;
+      font-size: 15px;
+      color: $lightblue;
+      line-height: 25px;
+      text-align: center;
+      margin: 0 1rem 3rem 1rem;
+    }
+  }
+}

@@ -4,4 +4,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Very much WIP
 
-Building out the space tourism Figma file from [Front End Mentor](https://www.frontendmentor.io/).
+Building out the space tourism Figma file from [Front End Mentor](https://www.frontendmentor.io/). 

@@ -1,0 +1,21 @@
+.main {
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px;
+    margin-bottom: 1.75rem;
+  }
+
+  &__link {
+    height: 48px;
+  }
+
+  &__hamburger {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+  }
+}

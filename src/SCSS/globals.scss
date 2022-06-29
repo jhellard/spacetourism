@@ -55,3 +55,37 @@ h1, h2, h3, h4 {
 h5 {
   font-family: 'Barlow Condensed', sans-serif;
 }
+
+// Animations
+
+.toggle {
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  visibility: visible !important;
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

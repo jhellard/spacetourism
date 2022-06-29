@@ -13,7 +13,7 @@ const TechImage = styled.img`
   margin-bottom: 1rem;
 `;
 
-const Technology = ({ Data, handleBackground, BGTech }) => {
+const Technology = ({ Data }) => {
   const [currentTechImage, setCurrentTechImage] = useState(Launch);
   const [currentTech, setCurrentTech] = useState(Data.technology[0]);
   const Tech = Data.technology;
@@ -63,7 +63,6 @@ const Technology = ({ Data, handleBackground, BGTech }) => {
           {currentTech.name.toUpperCase()}
         </h3>
         <p className="tech__selected__description">{currentTech.description}</p>
-        <button onClick={() => handleBackground(BGTech)}>DEBUG</button>
       </section>
     </div>
   );

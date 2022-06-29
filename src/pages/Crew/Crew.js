@@ -13,7 +13,7 @@ const CrewImage = styled.img`
   height: 222px;
 `;
 
-const Crew = ({ Data, handleBackground, BGCrew }) => {
+const Crew = ({ Data }) => {
   const [currentCrewImage, setCurrentCrewImage] = useState(Doug);
   const [currentCrew, setCurrentCrew] = useState(Data.crew[0]);
   console.log(Data.crew[0]);
@@ -63,7 +63,6 @@ const Crew = ({ Data, handleBackground, BGCrew }) => {
           {currentCrew.name.toUpperCase()}
         </h3>
         <p className="crew__selected__bio">{currentCrew.bio}</p>
-        <button onClick={() => handleBackground(BGCrew)}>DEBUG</button>
       </section>
     </div>
   );

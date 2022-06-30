@@ -16,7 +16,6 @@ const CrewImage = styled.img`
 const Crew = ({ Data }) => {
   const [currentCrewImage, setCurrentCrewImage] = useState(Doug);
   const [currentCrew, setCurrentCrew] = useState(Data.crew[0]);
-  console.log(Data.crew[0]);
   const Crew = Data.crew;
 
   const getCorrectCrew = (crew, index) => {

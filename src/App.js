@@ -26,6 +26,7 @@ const Main = styled.div`
 
 const App = () => {
   const [isHambugerOpen, setIsHambugerOpen] = useState(false);
+  const Links = Data.links;
 
   const handleHambuger = () => {
     document.querySelector(".main__nav").classList.toggle("toggle");
@@ -54,54 +55,23 @@ const App = () => {
             className="main__close"
             onClick={() => handleHambuger()}
           />
-          <Link
-            to="/"
-            className="main__route"
-            onClick={() => {
-              handleHambuger();
-            }}
-          >
-            <span className="main__nav__selection">
-              <span className="main__nav__selection__number">00</span>
-              <span className="main__nav__selection__title">HOME</span>
-            </span>
-          </Link>
-          <Link
-            to="/destinations"
-            className="main__route"
-            onClick={() => {
-              handleHambuger();
-            }}
-          >
-            <span className="main__nav__selection">
-              <span className="main__nav__selection__number">01</span>
-              <span className="main__nav__selection__title">DESTINATION</span>
-            </span>
-          </Link>
-          <Link
-            to="/crew"
-            className="main__route"
-            onClick={() => {
-              handleHambuger();
-            }}
-          >
-            <span className="main__nav__selection">
-              <span className="main__nav__selection__number">02</span>
-              <span className="main__nav__selection__title">CREW</span>
-            </span>
-          </Link>
-          <Link
-            to="/technology"
-            className="main__route"
-            onClick={() => {
-              handleHambuger();
-            }}
-          >
-            <span className="main__nav__selection">
-              <span className="main__nav__selection__number">03</span>
-              <span className="main__nav__selection__title">TECHNOLOGY</span>
-            </span>
-          </Link>
+          {Links.map((link, index) => (
+            <Link
+              key={index}
+              to={link.url}
+              className="main__route"
+              onClick={() => {
+                handleHambuger();
+              }}
+            >
+              <span className="main__nav__selection">
+                <span className="main__nav__selection__number">
+                  {link.number}
+                </span>
+                <span className="main__nav__selection__title">{link.name}</span>
+              </span>
+            </Link>
+          ))}
         </nav>
         <Routes>
           <Route path="/" element={<Landing />} />

@@ -15,29 +15,17 @@ import Destinations from "./pages/Destinations/Destinations";
 import Crew from "./pages/Crew/Crew";
 import Technology from "./pages/Technology/Technology";
 
-import BGMobile from "./assets/home/background-home-mobile.jpg";
-import BGDestination from "./assets/destination/background-destination-mobile.jpg";
-import BGCrew from "./assets/crew/background-crew-mobile.jpg";
-import BGTech from "./assets/technology/background-technology-mobile.jpg";
-
 const Main = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: url(${(props) => props.bg}) no-repeat center center fixed;
   background-size: cover;
-  overflow: hidden;
 `;
 
 const App = () => {
-  const [background, setBackground] = useState(BGMobile);
   const [isHambugerOpen, setIsHambugerOpen] = useState(false);
-
-  const handleBackground = (bg) => {
-    setBackground(bg);
-  };
 
   const handleHambuger = () => {
     document.querySelector(".main__nav").classList.toggle("toggle");
@@ -47,15 +35,10 @@ const App = () => {
 
   return (
     <div className="container-centered-x">
-      <Main className="main" bg={background}>
+      <Main className="main">
         <header className="main__header">
           <Link to="/" className="main__link">
-            <img
-              src={Logo}
-              alt="Space Logo"
-              className="main__logo"
-              onClick={() => handleBackground(BGMobile)}
-            />
+            <img src={Logo} alt="Space Logo" className="main__logo" />
           </Link>
           <img
             src={Hambuger}
@@ -76,7 +59,6 @@ const App = () => {
             className="main__route"
             onClick={() => {
               handleHambuger();
-              handleBackground(BGMobile);
             }}
           >
             <span className="main__nav__selection">
@@ -89,7 +71,6 @@ const App = () => {
             className="main__route"
             onClick={() => {
               handleHambuger();
-              handleBackground(BGDestination);
             }}
           >
             <span className="main__nav__selection">
@@ -102,7 +83,6 @@ const App = () => {
             className="main__route"
             onClick={() => {
               handleHambuger();
-              handleBackground(BGCrew);
             }}
           >
             <span className="main__nav__selection">
@@ -115,7 +95,6 @@ const App = () => {
             className="main__route"
             onClick={() => {
               handleHambuger();
-              handleBackground(BGTech);
             }}
           >
             <span className="main__nav__selection">
@@ -125,15 +104,7 @@ const App = () => {
           </Link>
         </nav>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Landing
-                handleBackground={handleBackground}
-                BGDestination={BGDestination}
-              />
-            }
-          />
+          <Route path="/" element={<Landing />} />
           <Route path="/destinations" element={<Destinations Data={Data} />} />
           <Route path="/crew" element={<Crew Data={Data} />} />
           <Route path="/technology" element={<Technology Data={Data} />} />

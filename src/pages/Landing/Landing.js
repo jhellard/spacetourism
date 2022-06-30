@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const Landing = ({ handleBackground, BGDestination }) => {
+const Landing = () => {
   return (
     <div className="landing__content">
       <h5>SO, YOU WANT TO TRAVEL TO</h5>
@@ -14,10 +14,7 @@ const Landing = ({ handleBackground, BGDestination }) => {
         experience!
       </p>
       <Link to="/destinations">
-        <button
-          className="landing__button"
-          onClick={() => handleBackground(BGDestination)}
-        >
+        <button className="landing__button">
           <span>EXPLORE</span>
         </button>
       </Link>

@@ -72,16 +72,22 @@ const Destinations = ({ Data }) => {
       </section>
       <span className="destinations__selected__line"></span>
       <div className="destinations__selected__info">
-        <h5 className="destinations__selected__info__distance">
-          AVG. DISTANCE
-        </h5>
-        <p className="destinations__selected__info__value">
-          {currentPlanet.distance.toUpperCase()}
-        </p>
-        <h5 className="destinations__selected__info__est">EST. TRAVEL TIME</h5>
-        <p className="destinations__selected__info__time">
-          {currentPlanet.travel.toUpperCase()}
-        </p>
+        <div>
+          <h5 className="destinations__selected__info__distance">
+            AVG. DISTANCE
+          </h5>
+          <p className="destinations__selected__info__value">
+            {currentPlanet.distance.toUpperCase()}
+          </p>
+        </div>
+        <div>
+          <h5 className="destinations__selected__info__est">
+            EST. TRAVEL TIME
+          </h5>
+          <p className="destinations__selected__info__time">
+            {currentPlanet.travel.toUpperCase()}
+          </p>
+        </div>
       </div>
     </div>
   );

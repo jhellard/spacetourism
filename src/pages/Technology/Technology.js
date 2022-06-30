@@ -10,6 +10,7 @@ const TechList = [Launch, SpacePort, Capsule];
 const TechImage = styled.img`
   content: url(${(props) => props.image});
   height: 170px;
+  width: 100%;
   margin-bottom: 1rem;
 `;
 

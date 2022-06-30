@@ -1,16 +1,31 @@
-// I don't like doing this here, but it's good for now
-.main {
-  &__header {
-    margin-bottom: 1rem;
-  }
-}
-
 .tech {
   &__content {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -128px;
+      left: 0;
+      width: 100vw;
+      height: calc(100vh + 80px);
+      background-image: url("../../assets/technology/background-technology-mobile.jpg");
+      background-size: cover;
+      overflow: hidden;
+      z-index: 0;
+
+      @include md {
+        background-image: url("../../assets/technology/background-technology-tablet.jpg");
+      }
+
+      @include lg {
+        background-image: url("../../assets/technology/background-technology-desktop.jpg");
+      }
+    }
   }
 
   &__pick {

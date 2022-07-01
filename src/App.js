@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Data from "./data.json";
@@ -11,47 +11,12 @@ import Crew from "./pages/Crew/Crew";
 import Technology from "./pages/Technology/Technology";
 
 const App = () => {
-  const [isHambugerOpen, setIsHambugerOpen] = useState(false);
-  const Links = Data.links;
-
-  const handleHambuger = () => {
-    document.querySelector(".main__nav").classList.toggle("toggle");
-
-    setIsHambugerOpen(!isHambugerOpen);
-  };
-
   return (
     <Routes>
-      <Route
-        path="/"
-        element={<Landing Links={Links} handleHambuger={handleHambuger} />}
-      />
-      <Route
-        path="/destinations"
-        element={
-          <Destinations
-            Data={Data}
-            Links={Links}
-            handleHambuger={handleHambuger}
-          />
-        }
-      />
-      <Route
-        path="/crew"
-        element={
-          <Crew Data={Data} Links={Links} handleHambuger={handleHambuger} />
-        }
-      />
-      <Route
-        path="/technology"
-        element={
-          <Technology
-            Data={Data}
-            Links={Links}
-            handleHambuger={handleHambuger}
-          />
-        }
-      />
+      <Route path="/" element={<Landing />} />
+      <Route path="/destinations" element={<Destinations Data={Data} />} />
+      <Route path="/crew" element={<Crew Data={Data} />} />
+      <Route path="/technology" element={<Technology Data={Data} />} />
     </Routes>
   );
 };

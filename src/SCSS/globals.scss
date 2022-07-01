@@ -10,9 +10,12 @@
 
 $font-150: 9.375rem; // 150px
 $font-80: 5rem; // 80px
+$font-56: 3.5rem; // 56px
 $font-32: 2rem; // 32px
+$font-28: 1.75rem; // 28px
 $font-20: 1.25rem; // 20px
 $font-16: 1rem; // 16px
+$font-14: 0.875rem; // 14px
 $font-15: 0.9375rem; // 15px
 
 $font-weight-md: 400;
@@ -21,6 +24,7 @@ $font-spacing-xl: 0.2112rem; // 3.38px
 $font-spacing-lg: 0.1688rem; // 2.7px
 $font-spacing-md: 0.125rem; // 2px
 $font-spacing-sm: 0.0781rem; // 1.25px
+$font-spacing-lg2: 0.1475rem; // 2.36px
 
 $font-height-lg: 1.75rem; // 28px
 $font-height-md: 1.5625rem; // 25px
@@ -73,6 +77,7 @@ h5 {
   text-decoration: none;
   font-weight: $font-weight-md;
   color: $lightblue;
+  margin: 0;
 }
 
 p {

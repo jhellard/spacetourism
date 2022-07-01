@@ -1,11 +1,7 @@
 .destinations {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: url("../../assets/destination/background-destination-mobile.jpg")
     no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
 
   @include md {
     background-image: url("../../assets/destination/background-destination-tablet.jpg");
@@ -16,84 +12,72 @@
   }
 
   &__pick {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 1rem;
+    margin-bottom: 2.25rem;
 
-    @include md {
-      align-self: flex-start;
-      margin-left: 2rem;
-    }
+    // @include md {
+    //   align-self: flex-start;
+    //   margin-left: 2rem;
+    // }
 
     span {
-      font-family: "Barlow Condensed", sans-serif;
-      text-decoration: none;
-      font-weight: 400;
-      font-size: 16px;
-      letter-spacing: 5px;
-      margin: 0;
+      font-family: $font-barlow-c;
+      letter-spacing: $font-spacing-lg;
       margin-right: 1rem;
-      margin-bottom: 1.25rem;
       color: $white;
       opacity: 25%;
 
       @include md {
-        font-size: 20px;
-        letter-spacing: 3.38px;
+        font-size: $font-20;
+        letter-spacing: $font-spacing-xl;
       }
     }
 
     h5 {
-      font-family: "Barlow Condensed", sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      letter-spacing: 2.7px;
-      margin: 0;
-      margin-bottom: 1.25rem;
+      display: inline-block;
+      font-size: $font-16;
+      letter-spacing: $font-spacing-lg;
       color: $white;
 
-      @include md {
-        font-size: 20px;
-        letter-spacing: 3.38px;
-      }
+      // @include md {
+      //   font-size: 20px;
+      //   letter-spacing: 3.38px;
+      // }
     }
   }
 
-  &__image {
-    img {
-      width: 170px;
-      height: 170px;
+  // Probably need this for the planet images
 
-      @include md {
-        width: 300px;
-        height: 300px;
-        margin-bottom: 1.5rem;
-      }
-    }
-  }
+  // &__image {
+  //   img {
+  //     width: 170px;
+  //     height: 170px;
+
+  //     @include md {
+  //       width: 300px;
+  //       height: 300px;
+  //       margin-bottom: 1.5rem;
+  //     }
+  //   }
+  // }
 
   &__list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
     margin-bottom: 1rem;
 
-    @include md {
-      margin-bottom: 1.5rem;
-    }
+    // @include md {
+    //   margin-bottom: 1.5rem;
+    // }
 
-    &__name {
+    &__planet {
+      display: inline-block;
       color: $lightblue;
-      margin: 1rem;
-      font-weight: 400;
-      font-size: 14px;
+      margin: 0.875rem;
+      font-size: $font-14;
+      letter-spacing: $font-spacing-lg2;
       padding-bottom: 0.3rem;
 
       @include md {
-        font-size: 16px;
-        letter-spacing: 2.7px;
+        font-size: $font-16;
+        letter-spacing: $font-spacing-lg;
         padding-bottom: 0.75rem;
       }
 
@@ -102,83 +86,69 @@
         cursor: pointer;
       }
 
-      &__active {
+      &__active,
+      &__active:hover {
         color: $white;
         border-bottom: 2px solid $white;
       }
     }
   }
 
-  &__selected {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &__name {
+    color: $white;
+    font-family: "Bellefair", serif;
+    font-size: $font-56;
 
-    &__name {
+    @include md {
+      font-size: $font-80;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__description {
+    font-size: $font-15;
+    line-height: $font-height-md;
+    text-align: center;
+    margin: 0 1.5rem 2rem 1.5rem;
+
+    @include md {
+      font-size: $font-16;
+      line-height: $font-height-lg;
+      margin: 0 6rem 3rem 6rem;
+    }
+  }
+
+  &__line {
+    width: 90%;
+    border-bottom: 1px solid $darkgray;
+    margin-bottom: 2rem;
+  }
+
+  &__info {
+    text-align: center;
+
+    // @include md {
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: space-around;
+    //   margin: 0 5rem;
+    //   width: 50%;
+    // }
+
+    &__distance,
+    &__est {
+      font-size: $font-14;
+      letter-spacing: $font-spacing-lg2;
+      margin-bottom: 1rem;
+    }
+
+    &__value,
+    &__time {
+      font-family: $font-bellefair;
+      font-size: $font-28;
       color: $white;
-      font-weight: 400;
-      font-family: "Bellefair", serif;
-      font-size: 56px;
       margin: 0;
-
-      @include md {
-        font-size: 80px;
-        margin-bottom: 1rem;
-      }
-    }
-
-    &__description {
-      font-family: "Barlow", sans-serif;
-      font-size: 15px;
-      color: $lightblue;
-      line-height: 25px;
-      text-align: center;
-      margin: 0 1.5rem 2rem 1.5rem;
-
-      @include md {
-        font-size: 1rem;
-        line-height: 28px;
-        margin: 0 6rem 3rem 6rem;
-      }
-    }
-
-    &__line {
-      width: 90%;
-      border-bottom: 1px solid $darkgray;
       margin-bottom: 2rem;
-    }
-
-    &__info {
-      text-align: center;
-
-      @include md {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 0 5rem;
-        width: 50%;
-      }
-
-      &__distance,
-      &__est {
-        font-family: "Barlow Condensed", sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        letter-spacing: 2.35px;
-        margin: 0;
-        margin-bottom: 1rem;
-        color: $lightblue;
-      }
-
-      &__value,
-      &__time {
-        font-family: "Bellefair", serif;
-        font-size: 28px;
-        color: $white;
-        margin: 0;
-        margin-bottom: 2rem;
-      }
     }
   }
 }

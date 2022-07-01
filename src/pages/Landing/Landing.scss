@@ -11,18 +11,6 @@
     background-image: url("../../assets/home/background-home-desktop.jpg");
   }
 
-  // &__cta {
-  //   @include xl {
-  //     align-items: flex-start;
-  //   }
-  // }
-
-  // @include xl {
-  //   flex-direction: row;
-  //   justify-content: space-between;
-  //   padding: 10rem 10rem 0rem 10rem;
-  // }
-
   h5 {
     font-size: $font-16;
     letter-spacing: $font-spacing-lg;
@@ -70,7 +58,7 @@
     // }
   }
 
-  &__button {
+  button {
     min-width: 9.375rem; // 150px
     min-height: 9.375rem; // 150px
     border-radius: 50%;

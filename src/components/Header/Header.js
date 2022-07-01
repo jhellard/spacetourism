@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "../../assets/shared/logo.svg";
 import Hambuger from "../../assets/shared/icon-hamburger.svg";
 import CloseHambuger from "../../assets/shared/icon-close.svg";
 
-const Header = ({ handleHambuger, Links }) => {
+import Data from "../../data.json";
+
+const Header = () => {
+  const [isHambugerOpen, setIsHambugerOpen] = useState(false);
+  const Links = Data.links;
+
+  const handleHambuger = () => {
+    document.querySelector(".header__nav").classList.toggle("toggle");
+
+    setIsHambugerOpen(!isHambugerOpen);
+  };
   return (
     <header className="header">
       <Link to="/" className="header__link">

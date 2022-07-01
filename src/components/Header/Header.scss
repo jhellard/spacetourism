@@ -1,0 +1,128 @@
+.header {
+      display: flex;
+      position: relative;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 90%;
+      margin: 1.75rem;
+      z-index: 2;
+  
+      // @include md {
+      //   margin-top: 0;
+      //   margin-bottom: 3.5rem;
+      // }
+  
+      // @include xl {
+      //   margin-top: 3rem;
+      // }
+  
+    &__nav {
+      display: flex;
+      visibility: hidden;
+      position: absolute;
+      align-self: flex-end;
+      flex-direction: column;
+      text-decoration: none;
+      width: auto;
+      height: 100%;
+      background: rgba(50, 50, 50, 0.5);
+      backdrop-filter: blur(16px);
+      z-index: 2;
+  
+      @include md {
+        flex-direction: row;
+        position: relative;
+        visibility: visible;
+        width: 56vw;
+        height: 100px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+      }
+  
+      @include xl {
+        width: 55%;
+        height: 80px;
+        padding: 1rem 5rem;
+        margin-top: 2rem;
+      }
+  
+      &__selection {
+        &:hover {
+          border-right: 3px solid $white;
+        }
+  
+        &__number {
+          font-family: "Barlow Condensed", sans-serif;
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 2.7px;
+          color: $white;
+          margin: 1rem;
+  
+          @include md {
+            display: none;
+          }
+  
+          @include xl {
+            display: initial;
+          }
+      
+        }
+  
+        &__title {
+          font-family: "Barlow Condensed", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 2.7px;
+          color: $white;
+  
+          @include md {
+            font-size: 14px;
+            letter-spacing: 2.36px;
+          }
+      
+        }
+      }
+    }
+  
+    &__route {
+      margin: 1rem 0 1rem 1rem;
+    }
+  
+    &__link {
+      height: 48px;
+    }
+  
+    &__hamburger {
+      width: 24px;
+      height: 24px;
+      margin: 0;
+  
+      @include md {
+        display: none;
+      }
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  
+    &__close {
+      margin: 2rem 24px 2rem auto;
+      width: 24px;
+      height: 24px;
+  
+      @include md {
+        display: none;
+      }
+  
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  

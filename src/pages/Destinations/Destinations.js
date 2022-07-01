@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+import Header from "../../components/Header/Header";
+
 import Moon from "../../assets/destination/image-moon.webp";
 import Mars from "../../assets/destination/image-mars.webp";
 import Europa from "../../assets/destination/image-europa.webp";
@@ -14,7 +16,7 @@ const PlanetImage = styled.img`
   height: 170px;
 `;
 
-const Destinations = ({ Data }) => {
+const Destinations = ({ Data, Links, handleHamburger }) => {
   const [currentPlanetImage, setCurrentPlanetImage] = useState(Moon);
   const [currentPlanet, setCurrentPlanet] = useState(Data.destinations[0]);
   const Planets = Data.destinations;
@@ -25,7 +27,8 @@ const Destinations = ({ Data }) => {
   };
 
   return (
-    <div className="destinations__content">
+    <div className="destinations">
+      <Header Links={Links} handleHambuger={handleHamburger} />
       <div className="destinations__pick">
         <span>01</span>
         <h5>PICK YOUR DESTINATION</h5>

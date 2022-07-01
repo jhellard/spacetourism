@@ -1,32 +1,18 @@
 .destinations {
-  &__content {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("../../assets/destination/background-destination-mobile.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: -144px;
-      left: 0;
-      width: 100vw;
-      height: calc(100vh + 211px);
-      background: url("../../assets/destination/background-destination-mobile.jpg") no-repeat center center fixed;
-      background-size: cover;
-      overflow: hidden;
-      z-index: 0;
+  @include md {
+    background-image: url("../../assets/destination/background-destination-tablet.jpg");
+  }
 
-      @include md {
-        background-image: url("../../assets/destination/background-destination-tablet.jpg");
-        height: 100vh;
-      }
-
-      @include lg {
-        background-image: url("../../assets/destination/background-destination-desktop.jpg");
-      }
-    }
+  @include xl {
+    background-image: url("../../assets/destination/background-destination-desktop.jpg");
   }
 
   &__pick {

@@ -12,7 +12,7 @@ const PlanetsList = [Moon, Mars, Europa, Titan];
 
 const PlanetImage = styled.img`
   content: url(${(props) => props.image});
-  width: 170px;
+  max-height: 170px;
 `;
 
 const Destinations = ({ Data }) => {
@@ -57,7 +57,7 @@ const Destinations = ({ Data }) => {
       <h5 className="destinations__name">{currentPlanet.name.toUpperCase()}</h5>
       <p className="destinations__description">{currentPlanet.description}</p>
       <span className="destinations__line"></span>
-      <div className="destinations__info">
+      <section className="destinations__info">
         <h5 className="destinations__info__distance">AVG. DISTANCE</h5>
         <p className="destinations__info__value">
           {currentPlanet.distance.toUpperCase()}
@@ -66,7 +66,7 @@ const Destinations = ({ Data }) => {
         <p className="destinations__info__time">
           {currentPlanet.travel.toUpperCase()}
         </p>
-      </div>
+      </section>
     </div>
   );
 };

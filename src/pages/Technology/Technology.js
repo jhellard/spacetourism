@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+import Header from "../../components/Header/Header";
+
 import Launch from "../../assets/technology/image-launch-vehicle-landscape.jpg";
 import SpacePort from "../../assets/technology/image-spaceport-landscape.jpg";
 import Capsule from "../../assets/technology/image-space-capsule-landscape.jpg";
@@ -9,6 +11,8 @@ const TechList = [Launch, SpacePort, Capsule];
 
 const TechImage = styled.img`
   content: url(${(props) => props.image});
+  width: 100%;
+  margin-bottom: 1rem;
 `;
 
 const Technology = ({ Data }) => {
@@ -22,46 +26,37 @@ const Technology = ({ Data }) => {
   };
 
   return (
-    <div className="tech__content">
+    <div className="tech container">
+      <Header />
       <div className="tech__pick">
         <span>03</span>
         <h5>SPACE LAUNCH 101</h5>
       </div>
-      <div className="tech__image">
-        <TechImage image={currentTechImage} />
+      <TechImage image={currentTechImage} />
+      <div className="tech__list flex">
+        {Tech.map((tech, index) =>
+          currentTech === tech ? (
+            <span
+              key={index}
+              onClick={() => getCorrectTech(tech, index)}
+              className="tech__list__member tech__list__member__active"
+            >
+              {index + 1}
+            </span>
+          ) : (
+            <span
+              key={index}
+              onClick={() => getCorrectTech(tech, index)}
+              className="tech__list__member"
+            >
+              {index + 1}
+            </span>
+          )
+        )}
       </div>
-      <div className="tech__list">
-        {Tech.map((tech, index) => {
-          if (currentTech === Tech[index]) {
-            return (
-              <div
-                key={index}
-                onClick={() => getCorrectTech(tech, index)}
-                className="tech__list__member tech__list__member__active"
-              >
-                <span>{index + 1}</span>
-              </div>
-            );
-          } else {
-            return (
-              <div
-                key={index}
-                onClick={() => getCorrectTech(tech, index)}
-                className="tech__list__member"
-              >
-                <span>{index + 1}</span>
-              </div>
-            );
-          }
-        })}
-      </div>
-      <section className="tech__selected">
-        <h5 className="tech__selected__term">THE TERMINOLOGY...</h5>
-        <h3 className="tech__selected__name">
-          {currentTech.name.toUpperCase()}
-        </h3>
-        <p className="tech__selected__description">{currentTech.description}</p>
-      </section>
+      <h5 className="tech__term">THE TERMINOLOGY...</h5>
+      <h3 className="tech__name">{currentTech.name.toUpperCase()}</h3>
+      <p className="tech__description">{currentTech.description}</p>
     </div>
   );
 };

@@ -1,190 +1,79 @@
 .tech {
-  &__content {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background: url("../../assets/technology/background-technology-mobile.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: -144px;
-      left: 0;
-      width: 100vw;
-      height: calc(100vh + 80px);
-      background: url("../../assets/technology/background-technology-mobile.jpg")
-        no-repeat center center fixed;
-      background-size: cover;
-      overflow: hidden;
-      z-index: 0;
-
-      @include md {
-        background-image: url("../../assets/technology/background-technology-tablet.jpg");
-      }
-
-      @include lg {
-        background-image: url("../../assets/technology/background-technology-desktop.jpg");
-      }
-    }
+  @include md {
+    background-image: url("../../assets/technology/background-technology-tablet.jpg");
   }
 
-  &__pick {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 1rem;
-
-    @include md {
-      align-self: flex-start;
-      margin-left: 2rem;
-    }
-
-    span {
-      font-family: "Barlow Condensed", sans-serif;
-      text-decoration: none;
-      font-weight: 400;
-      font-size: 16px;
-      letter-spacing: 5px;
-      margin: 0;
-      margin-right: 1rem;
-      margin-bottom: 1.25rem;
-      color: $white;
-      opacity: 25%;
-
-      @include md {
-        font-size: 20px;
-        letter-spacing: 3.38px;
-      }
-    }
-
-    h5 {
-      font-family: "Barlow Condensed", sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      letter-spacing: 2.7px;
-      margin: 0;
-      margin-bottom: 1.25rem;
-      color: $white;
-
-      @include md {
-        font-size: 20px;
-        letter-spacing: 3.38px;
-      }
-    }
-  }
-
-  &__image {
-    width: 100%;
-
-    @include md {
-      margin-bottom: 1.5rem;
-    }
-    img {
-      min-height: 170px;
-      width: 100%;
-      margin-bottom: 1rem;
-      
-      @include md {
-        min-height: 100%;
-      }
-    }
+  @include lg {
+    background-image: url("../../assets/technology/background-technology-desktop.jpg");
   }
 
   &__list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
+    margin-bottom: 1rem;
 
-    @include md {
-      margin: 1rem;
-    }
+    // @include md {
+    //   margin: 1rem;
+    // }
 
     &__member {
       display: grid;
       place-items: center;
-      width: 40px;
-      height: 40px;
+      width: 2.5rem; // 40px
+      height: 2.5rem; // 40px
       border-radius: 50%;
       margin: 1rem 0.75rem;
       border: 1px solid $darkgray;
+      color: $white;
 
       @include md {
         width: 60px;
         height: 60px;
       }
 
-      span {
-        color: $white;
-
-        @include md {
-          font-size: 24px;
-          letter-spacing: 1.5px;
-        }
-      }
-
       &__active {
         background-color: $white;
-        opacity: 1;
-
-        span {
-          color: $darkblue;
-        }
+        color: $darkblue;
       }
     }
   }
 
-  &__selected {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &__term {
+    color: $lightblue;
+    font-weight: 400;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 2.35px;
+    font-size: 14px;
+    margin-bottom: 0.75rem;
 
     @include md {
-      max-width: 480px;
+      font-size: 16px;
+      letter-spacing: 2.7px;
     }
+  }
 
-    &__term {
-      color: $lightblue;
-      font-weight: 400;
-      font-family: "Barlow Condensed", sans-serif;
-      letter-spacing: 2.35px;
-      font-size: 14px;
-      margin: 1rem;
-      opacity: 0.5;
+  &__name {
+    color: $white;
+    font-weight: $font-weight-md;
+    font-size: $font-24;
+    margin-bottom: 1rem;
 
-      @include md {
-        font-size: 16px;
-        letter-spacing: 2.7px;
-      }
-    }
+    // @include md {
+    //   font-size: 40px;
+    // }
+  }
 
-    &__name {
-      color: $white;
-      font-weight: 400;
-      font-family: "Bellefair", serif;
-      font-size: 24px;
-      margin: 0;
-      margin-bottom: 1rem;
+  &__description {
+    font-size: $font-15;
+    line-height: $font-height-md;
+    text-align: center;
+    margin: 0 1.5rem 4rem 1.5rem;
 
-      @include md {
-        font-size: 40px;
-      }
-    }
-
-    &__description {
-      font-family: "Barlow", sans-serif;
-      font-size: 15px;
-      color: $lightblue;
-      line-height: 25px;
-      text-align: center;
-      margin: 0 1rem 3rem 1rem;
-
-      @include md {
-        font-size: 1rem;
-        line-height: 28px;
-      }
-    }
+    // @include md {
+    //   font-size: 1rem;
+    //   line-height: 28px;
+    // }
   }
 }

@@ -11,40 +11,6 @@
     background-image: url("../../assets/destination/background-destination-desktop.jpg");
   }
 
-  &__pick {
-    margin-bottom: 2.25rem;
-
-    // @include md {
-    //   align-self: flex-start;
-    //   margin-left: 2rem;
-    // }
-
-    span {
-      font-family: $font-barlow-c;
-      letter-spacing: $font-spacing-lg;
-      margin-right: 1rem;
-      color: $white;
-      opacity: 25%;
-
-      @include md {
-        font-size: $font-20;
-        letter-spacing: $font-spacing-xl;
-      }
-    }
-
-    h5 {
-      display: inline-block;
-      font-size: $font-16;
-      letter-spacing: $font-spacing-lg;
-      color: $white;
-
-      // @include md {
-      //   font-size: 20px;
-      //   letter-spacing: 3.38px;
-      // }
-    }
-  }
-
   // Probably need this for the planet images
 
   // &__image {
@@ -96,7 +62,7 @@
 
   &__name {
     color: $white;
-    font-family: "Bellefair", serif;
+    font-family: $font-bellefair;
     font-size: $font-56;
 
     @include md {
@@ -116,12 +82,6 @@
       line-height: $font-height-lg;
       margin: 0 6rem 3rem 6rem;
     }
-  }
-
-  &__line {
-    width: 90%;
-    border-bottom: 1px solid $darkgray;
-    margin-bottom: 2rem;
   }
 
   &__info {

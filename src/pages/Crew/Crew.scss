@@ -1,115 +1,26 @@
 .crew {
-  &__content {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background: url("../../assets/crew/background-crew-mobile.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: -144px;
-      left: 0;
-      width: 100vw;
-      height: calc(100vh);
-      background: url("../../assets/crew/background-crew-mobile.jpg") no-repeat
-        center center fixed;
-      background-size: cover;
-      overflow: hidden;
-      z-index: 0;
-
-      @include md {
-        background-image: url("../../assets/crew/background-crew-tablet.jpg");
-      }
-
-      @include lg {
-        background-image: url("../../assets/crew/background-crew-tablet.jpg");
-      }
-    }
+  @include md {
+    background-image: url("../../assets/crew/background-crew-tablet.jpg");
   }
 
-  &__pick {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 1rem;
-
-    @include md {
-      align-self: flex-start;
-      margin-left: 2rem;
-    }
-
-    span {
-      font-family: "Barlow Condensed", sans-serif;
-      text-decoration: none;
-      font-weight: 400;
-      font-size: 16px;
-      letter-spacing: 5px;
-      margin: 0;
-      margin-right: 1rem;
-      margin-bottom: 1.25rem;
-      color: $white;
-      opacity: 25%;
-
-      @include md {
-        font-size: 20px;
-        letter-spacing: 3.38px;
-      }
-    }
-
-    h5 {
-      font-family: "Barlow Condensed", sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      letter-spacing: 2.7px;
-      margin: 0;
-      margin-bottom: 1.25rem;
-      color: $white;
-
-      @include md {
-        font-size: 20px;
-        letter-spacing: 3.38px;
-      }
-    }
-  }
-
-  &__image {
-    @include md {
-      order: 2;
-      overflow: hidden;
-    }
-
-    img {
-      @include md {
-        min-height: 532px;
-        overflow: hidden;
-      }
-    }
-  }
-
-  &__line {
-    width: 90%;
-    border-bottom: 1px solid $darkgray;
-    margin-bottom: 1rem;
-
-    @include md {
-      display: none;
-    }
+  @include xl {
+    background-image: url("../../assets/crew/background-crew-desktop.jpg");
   }
 
   &__list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
+    margin-bottom: 1rem;
 
-    @include md {
-      order: 1;
-      margin-bottom: 1rem;
-    }
+    // @include md {
+    //   order: 1;
+    //   margin-bottom: 1rem;
+    // }
 
     &__member {
+      display: inline-block;
       background-color: $white;
       width: 10px;
       height: 10px;
@@ -118,63 +29,50 @@
       opacity: 0.17;
 
       &:hover {
-        border-bottom: 2px solid $lightblue;
+        background-color: $lightblue;
+        cursor: pointer;
       }
 
       &__active {
-        color: $white;
         opacity: 1;
-        border-bottom: 2px solid $white;
       }
     }
   }
 
-  &__selected {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &__role {
+    color: $white;
+    font-family: $font-bellefair;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.5;
 
-    &__role {
-      color: $white;
-      font-weight: 400;
-      font-family: "Bellefair", serif;
-      font-size: 1rem;
-      margin: 1rem;
-      opacity: 0.5;
+    // @include md {
+    //   font-size: 24px;
+    // }
+  }
 
-      @include md {
-        font-size: 24px;
-      }
-    }
+  &__name {
+    color: $white;
+    font-weight: $font-weight-md;
+    font-size: $font-24;
+    margin-bottom: 1rem;
 
-    &__name {
-      color: $white;
-      font-weight: 400;
-      font-family: "Bellefair", serif;
-      font-size: 24px;
-      margin: 0;
-      margin-bottom: 1rem;
+    // @include md {
+    //   font-size: 40px;
+    // }
+  }
 
-      @include md {
-        font-size: 40px;
-      }
-    }
+  &__bio {
+    font-size: $font-15;
+    line-height: $font-height-md;
+    text-align: center;
+    margin: 0 1.5rem 3rem 1.5rem;
 
-    &__bio {
-      font-family: "Barlow", sans-serif;
-      font-size: 15px;
-      color: $lightblue;
-      line-height: 25px;
-      text-align: center;
-      margin: 0 1.5rem 3rem 1.5rem;
-
-      @include md {
-        font-size: 1rem;
-        line-height: 28px;
-        max-width: 586px;
-        margin-bottom: 1.5rem;
-      }
-    }
+    // @include md {
+    //   font-size: 1rem;
+    //   line-height: 28px;
+    //   max-width: 586px;
+    //   margin-bottom: 1.5rem;
+    // }
   }
 }

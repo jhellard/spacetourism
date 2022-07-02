@@ -1,40 +1,39 @@
 .destinations {
-  background: url("../../assets/destination/background-destination-mobile.jpg")
-    no-repeat center center fixed;
-  background-size: cover;
+  &::before {
+    background: url("../../assets/destination/background-destination-mobile.jpg")
+      no-repeat center center fixed;
+    background-size: cover;
 
-  @include md {
-    background-image: url("../../assets/destination/background-destination-tablet.jpg");
+    @include md {
+      background-image: url("../../assets/destination/background-destination-tablet.jpg");
+    }
+
+    @include xl {
+      background-image: url("../../assets/destination/background-destination-desktop.jpg");
+    }
   }
 
-  @include xl {
-    background-image: url("../../assets/destination/background-destination-desktop.jpg");
+  &__image {
+    width: 170px;
+    height: 170px;
+
+    @include md {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 2rem;
+    }
   }
-
-  // Probably need this for the planet images
-
-  // &__image {
-  //   img {
-  //     width: 170px;
-  //     height: 170px;
-
-  //     @include md {
-  //       width: 300px;
-  //       height: 300px;
-  //       margin-bottom: 1.5rem;
-  //     }
-  //   }
-  // }
 
   &__list {
     margin-bottom: 1rem;
 
-    // @include md {
-    //   margin-bottom: 1.5rem;
-    // }
+    @include md {
+      margin-bottom: 1.5rem;
+    }
 
     &__planet {
       display: inline-block;
+      font-family: $font-barlow-c;
       color: $lightblue;
       margin: 0.875rem;
       font-size: $font-14;
@@ -67,7 +66,7 @@
 
     @include md {
       font-size: $font-80;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -84,16 +83,23 @@
     }
   }
 
+  &__line {
+    @include md {
+      display: initial;
+      width: 80%;
+    }
+  }
+
   &__info {
     text-align: center;
 
-    // @include md {
-    //   display: flex;
-    //   flex-direction: row;
-    //   justify-content: space-around;
-    //   margin: 0 5rem;
-    //   width: 50%;
-    // }
+    @include md {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 0 5rem;
+      width: 50%;
+    }
 
     &__distance,
     &__est {

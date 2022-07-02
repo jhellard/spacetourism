@@ -1,23 +1,33 @@
 .crew {
-  background: url("../../assets/crew/background-crew-mobile.jpg") no-repeat
-    center center fixed;
-  background-size: cover;
+  &::before {
+    background: url("../../assets/crew/background-crew-mobile.jpg") no-repeat
+      center center fixed;
+    background-size: cover;
 
-  @include md {
-    background-image: url("../../assets/crew/background-crew-tablet.jpg");
+    @include md {
+      background-image: url("../../assets/crew/background-crew-tablet.jpg");
+    }
+
+    @include xl {
+      background-image: url("../../assets/crew/background-crew-desktop.jpg");
+    }
   }
 
-  @include xl {
-    background-image: url("../../assets/crew/background-crew-desktop.jpg");
+  &__image {
+    max-height: 223px;
+
+    @include md {
+      max-height: 572px;
+      order: 2;
+    }
   }
 
   &__list {
     margin-bottom: 1rem;
 
-    // @include md {
-    //   order: 1;
-    //   margin-bottom: 1rem;
-    // }
+    @include md {
+      order: 1;
+    }
 
     &__member {
       display: inline-block;
@@ -46,9 +56,9 @@
     margin-bottom: 0.75rem;
     opacity: 0.5;
 
-    // @include md {
-    //   font-size: 24px;
-    // }
+    @include md {
+      font-size: $font-24;
+    }
   }
 
   &__name {
@@ -57,9 +67,9 @@
     font-size: $font-24;
     margin-bottom: 1rem;
 
-    // @include md {
-    //   font-size: 40px;
-    // }
+    @include md {
+      font-size: $font-40;
+    }
   }
 
   &__bio {
@@ -68,11 +78,11 @@
     text-align: center;
     margin: 0 1.5rem 3rem 1.5rem;
 
-    // @include md {
-    //   font-size: 1rem;
-    //   line-height: 28px;
-    //   max-width: 586px;
-    //   margin-bottom: 1.5rem;
-    // }
+    @include md {
+      font-size: $font-16;
+      line-height: $font-height-lg;
+      max-width: 590px;
+      margin-bottom: 1.5rem;
+    }
   }
 }

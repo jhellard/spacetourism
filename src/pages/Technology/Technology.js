@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
 import Header from "../../components/Header/Header";
 
@@ -8,12 +7,6 @@ import SpacePort from "../../assets/technology/image-spaceport-landscape.jpg";
 import Capsule from "../../assets/technology/image-space-capsule-landscape.jpg";
 
 const TechList = [Launch, SpacePort, Capsule];
-
-const TechImage = styled.img`
-  content: url(${(props) => props.image});
-  width: 100%;
-  margin-bottom: 1rem;
-`;
 
 const Technology = ({ Data }) => {
   const [currentTechImage, setCurrentTechImage] = useState(Launch);
@@ -32,7 +25,11 @@ const Technology = ({ Data }) => {
         <span>03</span>
         <h5>SPACE LAUNCH 101</h5>
       </div>
-      <TechImage image={currentTechImage} />
+      <img
+        className="tech__image"
+        src={currentTechImage}
+        alt="Technology Portrayed"
+      />
       <div className="tech__list flex">
         {Tech.map((tech, index) =>
           currentTech === tech ? (

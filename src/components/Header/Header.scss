@@ -8,10 +8,10 @@
       margin: 1.75rem;
       z-index: 2;
   
-      // @include md {
-      //   margin-top: 0;
-      //   margin-bottom: 3.5rem;
-      // }
+      @include md {
+        margin-top: 0;
+        margin-bottom: 2rem;
+      }
   
       // @include xl {
       //   margin-top: 3rem;

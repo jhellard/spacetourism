@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
 import Header from "../../components/Header/Header";
 
@@ -9,11 +8,6 @@ import Victor from "../../assets/crew/image-victor-glover.webp";
 import Anousheh from "../../assets/crew/image-anousheh-ansari.webp";
 
 const CrewList = [Doug, Mark, Victor, Anousheh];
-
-const CrewImage = styled.img`
-  content: url(${(props) => props.image});
-  max-height: 222px;
-`;
 
 const Crew = ({ Data }) => {
   const [currentCrewImage, setCurrentCrewImage] = useState(Doug);
@@ -32,7 +26,11 @@ const Crew = ({ Data }) => {
         <span>02</span>
         <h5>MEET YOUR CREW</h5>
       </div>
-      <CrewImage image={currentCrewImage} />
+      <img
+        className="crew__image"
+        src={currentCrewImage}
+        alt="Crew Member"
+      />
       <span className="crew__line"></span>
       <div className="crew__list">
         {Crew.map((member, index) =>

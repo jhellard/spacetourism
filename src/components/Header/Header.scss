@@ -1,128 +1,144 @@
 .header {
-      display: flex;
+  display: flex;
+  align-items: flex-start;
+  min-width: 100%;
+  z-index: 2;
+
+  @include md {
+    justify-content: space-between;
+    
+    margin-bottom: 2rem;
+  }
+
+  @include xl {
+    margin-top: 35.2px;
+    align-items: center;
+  }
+
+  &__logo,
+  &__menu {
+    margin: 1.75rem;
+  }
+
+  &__logo {
+    @include xl {
+      margin-left: 56px;
+    }
+  }
+
+  &__menu {
+    background: transparent;
+    width: 24px;
+    height: 21px;
+    background-image: url(../../assets/shared/icon-hamburger.svg);
+    border: 0;
+    margin-left: auto;
+
+    @include md {
+      display: none;
+    }
+  }
+
+  // &__nav {
+
+  //
+  // }
+
+  &__link {
+    height: 48px;
+  }
+
+  .nav {
+    position: absolute;
+    visibility: hidden;
+    margin-left: auto;
+    width: 68%;
+    inset: 0;
+    background: rgba(50, 50, 50, 0.5);
+    backdrop-filter: blur(16px);
+
+    @include md {
       position: relative;
+      visibility: visible;
+      justify-self: flex-end;
+      margin-left: 0;
+      width: 60%;
+      height: 96px;
       flex-direction: row;
-      justify-content: space-between;
       align-items: center;
-      min-width: 90%;
-      margin: 1.75rem;
-      z-index: 2;
-  
-      @include md {
-        margin-top: 0;
-        margin-bottom: 2rem;
-      }
-  
-      // @include xl {
-      //   margin-top: 3rem;
-      // }
-  
-    &__nav {
-      display: flex;
-      visibility: hidden;
-      position: absolute;
-      align-self: flex-end;
-      flex-direction: column;
-      text-decoration: none;
-      width: auto;
-      height: 100%;
-      background: rgba(50, 50, 50, 0.5);
-      backdrop-filter: blur(16px);
-      z-index: 2;
-  
-      @include md {
-        flex-direction: row;
-        position: relative;
-        visibility: visible;
-        width: 56vw;
-        height: 100px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 2rem;
-      }
-  
+      padding: 2rem;
+    }
+
+    @include xl {
+      width: 57%;
+      padding: 0 5rem;
+    }
+
+    &__line {
       @include xl {
-        width: 55%;
-        height: 80px;
-        padding: 1rem 5rem;
-        margin-top: 2rem;
-      }
-  
-      &__selection {
-        &:hover {
-          border-right: 3px solid $white;
-        }
-  
-        &__number {
-          font-family: "Barlow Condensed", sans-serif;
-          font-size: 16px;
-          font-weight: bold;
-          letter-spacing: 2.7px;
-          color: $white;
-          margin: 1rem;
-  
-          @include md {
-            display: none;
-          }
-  
-          @include xl {
-            display: initial;
-          }
-      
-        }
-  
-        &__title {
-          font-family: "Barlow Condensed", sans-serif;
-          font-size: 16px;
-          font-weight: 400;
-          letter-spacing: 2.7px;
-          color: $white;
-  
-          @include md {
-            font-size: 14px;
-            letter-spacing: 2.36px;
-          }
-      
-        }
+        position: absolute;
+        min-width: 31.5%;
+        height: 1px;
+        background: $darkgray;
+        left: 200px;
       }
     }
-  
-    &__route {
-      margin: 1rem 0 1rem 1rem;
-    }
-  
-    &__link {
-      height: 48px;
-    }
-  
-    &__hamburger {
-      width: 24px;
-      height: 24px;
+
+    ul {
+      padding-left: 1rem;
+      list-style: none;
       margin: 0;
-  
+
+      @include md {
+        min-width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0;
+      }
+    }
+
+    &__title {
+      font-family: $font-barlow-c;
+      letter-spacing: $font-spacing-lg;
+      color: $white;
+      margin-bottom: 2.25rem;
+
+      @include md {
+        font-size: 14px;
+        letter-spacing: 2.36px;
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        border-right: 3px solid $white;
+      }
+    }
+    &__number {
+      font-weight: bold;
+      color: $white;
+      margin: 1rem;
+
       @include md {
         display: none;
       }
-  
-      &:hover {
-        cursor: pointer;
+
+      @include xl {
+        display: initial;
       }
     }
-  
+
     &__close {
       margin: 2rem 24px 2rem auto;
       width: 24px;
       height: 24px;
-  
-      @include md {
-        display: none;
-      }
-  
-  
+
       &:hover {
         cursor: pointer;
       }
+
+      @include md {
+        display: none;
+      }
     }
   }
-  
+}

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "../../assets/shared/logo.svg";
-import Hambuger from "../../assets/shared/icon-hamburger.svg";
 import CloseHambuger from "../../assets/shared/icon-close.svg";
 
 import Data from "../../data.json";
@@ -12,45 +11,40 @@ const Header = () => {
   const Links = Data.links;
 
   const handleHambuger = () => {
-    document.querySelector(".header__nav").classList.toggle("toggle");
+    document.querySelector(".nav").classList.toggle("toggle");
 
     setIsHambugerOpen(!isHambugerOpen);
   };
   return (
     <header className="header">
-      <Link to="/" className="header__link">
-        <img src={Logo} alt="Space Logo" className="header__logo" />
-      </Link>
-      <img
-        src={Hambuger}
-        alt="Hamburger Menu"
-        className="header__hamburger"
-        onClick={() => handleHambuger()}
-      />
-      <nav className="header__nav">
+      <img src={Logo} alt="Space Logo" className="header__logo" />
+      <button className="header__menu" onClick={() => handleHambuger()} />
+      <span className="nav__line" />
+      <nav className="nav flex-c">
         <img
           src={CloseHambuger}
           alt="Close Hamburger Menu"
-          className="header__close"
+          className="nav__close"
           onClick={() => handleHambuger()}
         />
-        {Links.map((link, index) => (
-          <Link
-            key={index}
-            to={link.url}
-            className="header__route"
-            onClick={() => {
-              handleHambuger();
-            }}
-          >
-            <span className="header__nav__selection">
-              <span className="header__nav__selection__number">
-                {link.number}
-              </span>
-              <span className="header__nav__selection__title">{link.name}</span>
-            </span>
-          </Link>
-        ))}
+
+        <ul>
+          {Links.map((link, index) => (
+            <Link
+              key={index}
+              to={link.url}
+              className="nav__route"
+              onClick={() => {
+                handleHambuger();
+              }}
+            >
+              <li className="nav__title">
+                <span className="nav__number">{link.number}</span>
+                {link.name}
+              </li>
+            </Link>
+          ))}
+        </ul>
       </nav>
     </header>
   );

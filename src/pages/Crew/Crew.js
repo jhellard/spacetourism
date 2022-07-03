@@ -2,22 +2,9 @@ import React, { useState } from "react";
 
 import Header from "../../components/Header/Header";
 
-import Doug from "../../assets/crew/image-douglas-hurley.webp";
-import Mark from "../../assets/crew/image-mark-shuttleworth.webp";
-import Victor from "../../assets/crew/image-victor-glover.webp";
-import Anousheh from "../../assets/crew/image-anousheh-ansari.webp";
-
-const CrewList = [Doug, Mark, Victor, Anousheh];
-
 const Crew = ({ Data }) => {
-  const [currentCrewImage, setCurrentCrewImage] = useState(Doug);
   const [currentCrew, setCurrentCrew] = useState(Data.crew[0]);
   const Crew = Data.crew;
-
-  const getCorrectCrew = (crew, index) => {
-    setCurrentCrew(crew);
-    setCurrentCrewImage(CrewList[index]);
-  };
 
   return (
     <div className="crew container">
@@ -28,7 +15,7 @@ const Crew = ({ Data }) => {
       </div>
       <img
         className="crew__image"
-        src={currentCrewImage}
+        src={currentCrew.images.webp}
         alt="Crew Member"
       />
       <span className="crew__line"></span>
@@ -37,13 +24,13 @@ const Crew = ({ Data }) => {
           currentCrew === member ? (
             <span
               key={index}
-              onClick={() => getCorrectCrew(member, index)}
+              onClick={() => setCurrentCrew(member)}
               className="crew__list__member crew__list__member__active"
             />
           ) : (
             <span
               key={index}
-              onClick={() => getCorrectCrew(member, index)}
+              onClick={() => setCurrentCrew(member)}
               className="crew__list__member"
             />
           )

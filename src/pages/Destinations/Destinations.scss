@@ -13,14 +13,33 @@
     }
   }
 
+  &__content {
+    @include xl {
+      flex-direction: row;
+      min-width: 80%;
+
+      div:first-of-type {
+        align-items: flex-start;
+      }
+    }
+  }
+
   &__image {
-    width: 170px;
-    height: 170px;
+    width: 10.625rem; // 170px
+    height: 10.625rem; // 170px
+    margin-bottom: 1rem;
 
     @include md {
-      width: 300px;
-      height: 300px;
+      width: 18.75rem; // 300px
+      height: 18.75rem; // 300px
       margin-bottom: 2rem;
+    }
+
+    @include xl {
+      width: 27.8125rem; // 445px
+      height: 27.8125rem; // 445px
+      margin-bottom: 0;
+      margin-left: 7rem;
     }
   }
 
@@ -29,6 +48,9 @@
 
     @include md {
       margin-bottom: 1.5rem;
+    }
+
+    @include xl {
     }
 
     &__planet {
@@ -68,6 +90,10 @@
       font-size: $font-80;
       margin-bottom: 1.5rem;
     }
+
+    @include xl {
+      font-size: $font-100;
+    }
   }
 
   &__description {
@@ -81,12 +107,24 @@
       line-height: $font-height-lg;
       margin: 0 6rem 3rem 6rem;
     }
+
+    @include xl {
+      font-size: $font-18;
+      line-height: $font-height-xl;
+      margin: 0 0 2rem 0;
+      text-align: start;
+      max-width: 444px;
+    }
   }
 
   &__line {
     @include md {
       display: initial;
       width: 80%;
+    }
+    @include xl {
+      display: initial;
+      width: 100%;
     }
   }
 
@@ -99,6 +137,14 @@
       justify-content: space-around;
       margin: 0 5rem;
       width: 50%;
+    }
+
+    @include xl {
+      font-size: $font-80;
+      margin-left: 0;
+      justify-content: space-between;
+      width: 75%;
+      text-align: start;
     }
 
     &__distance,

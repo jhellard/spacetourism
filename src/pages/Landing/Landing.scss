@@ -9,73 +9,104 @@
 
   @include xl {
     background-image: url("../../assets/home/background-home-desktop.jpg");
+    justify-content: space-between;
   }
 
-  h5 {
-    font-size: $font-16;
-    letter-spacing: $font-spacing-lg;
-    margin: 0;
-    margin-bottom: 1.25rem;
+  &__content {
+    flex-direction: column;
 
     @include md {
-      // Fix this margin with header later
-      margin-top: 6rem;
-      font-size: $font-20;
-      letter-spacing: $font-spacing-xl;
-    }
-  }
-
-  h1 {
-    font-size: $font-80;
-    font-weight: $font-weight-md;
-    margin: 0;
-    margin-bottom: 2rem;
-
-    @include md {
-      font-size: $font-150;
-      margin-bottom: 1rem;
-    }
-  }
-
-  p {
-    font-size: $font-15;
-    text-align: center;
-    max-width: 31.25rem; // 500px
-    margin: 0 1.35rem 5rem 1.35rem;
-    line-height: $font-height-md;
-
-    @include md {
-      font-size: $font-16;
-      line-height: $font-height-lg;
-      max-width: 27.75rem; // 444px
-      margin: 0 0 10rem 0;
+      margin-top: 4rem;
     }
 
-    // @include xl {
-    //   text-align: start;
-    //   max-width: 410px;
-    //   margin-bottom: 5rem;
-    // }
-  }
-
-  button {
-    min-width: 9.375rem; // 150px
-    min-height: 9.375rem; // 150px
-    border-radius: 50%;
-    border: none;
-    font-family: $font-bellefair;
-    font-size: $font-20;
-    letter-spacing: $font-spacing-md;
-
-    @include md {
-      min-width: 15.125rem; // 242px
-      min-height: 15.125rem; // 242px
-      font-size: $font-32;
-      letter-spacing: $font-spacing-md;
+    @include xl {
+      justify-content: space-between;
+      flex-direction: row;
+      min-width: 80%;
+      margin-bottom: 10rem;
     }
 
-    // @include xl {
-    //   margin-top: 6rem;
-    // }
+    section {
+      text-align: center;
+
+      h5 {
+        font-size: $font-16;
+        letter-spacing: $font-spacing-lg;
+        margin: 0;
+        margin-bottom: 1.25rem;
+
+        @include md {
+          font-size: $font-20;
+          letter-spacing: $font-spacing-xl;
+        }
+
+        @include xl {
+          text-align: start;
+        }
+      }
+
+      h1 {
+        font-size: $font-80;
+        font-weight: $font-weight-md;
+        margin: 0;
+        margin-bottom: 1.5rem;
+
+        @include md {
+          font-size: $font-150;
+          margin-bottom: 1rem;
+        }
+      }
+
+      p {
+        font-size: $font-15;
+        max-width: 31.25rem; // 500px
+        margin: 0 1.35rem 5rem 1.35rem;
+        line-height: $font-height-md;
+
+        @include md {
+          font-size: $font-16;
+          line-height: $font-height-lg;
+          max-width: 27.75rem; // 444px
+          margin: 0 0 10rem 0;
+        }
+
+        @include xl {
+          text-align: start;
+          max-width: 25.625rem; // 410px
+          margin-bottom: 0;
+        }
+      }
+
+      & > a > button {
+        min-width: 9.375rem; // 150px
+        min-height: 9.375rem; // 150px
+        border-radius: 50%;
+        border: none;
+        font-family: $font-bellefair;
+        font-size: $font-20;
+        letter-spacing: $font-spacing-md;
+        cursor: pointer;
+        outline: 0px solid rgba(255, 255, 255, 0.2);
+        transition: outline 0.3s ease-in-out;
+
+        @include md {
+          min-width: 15.125rem; // 242px
+          min-height: 15.125rem; // 242px
+          font-size: $font-32;
+          letter-spacing: $font-spacing-md;
+        }
+
+        @include xl {
+          min-width: 17.125rem; // 274px
+          min-height: 17.125rem; // 274px
+
+          &:hover {
+            color: $darkblue;
+            background-color: $white;
+            outline: 80px solid rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+    }
   }
 }

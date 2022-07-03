@@ -1,14 +1,18 @@
 *,
 *::before,
 *::after {
-  padding: 0;
   box-sizing: border-box;
   z-index: 1;
+}
+
+body {
+  margin: 0;
 }
 
 // Fonts
 
 $font-150: 9.375rem; // 150px
+$font-100: 6.25rem; // 100px
 $font-80: 5rem; // 80px
 $font-56: 3.5rem; // 56px
 $font-40: 2.5rem; // 40px
@@ -16,18 +20,21 @@ $font-32: 2rem; // 32px
 $font-28: 1.75rem; // 28px
 $font-24: 1.5rem; // 24px
 $font-20: 1.25rem; // 20px
+$font-18: 1.125rem; // 18px
 $font-16: 1rem; // 16px
 $font-14: 0.875rem; // 14px
 $font-15: 0.9375rem; // 15px
 
 $font-weight-md: 400;
 
+$font-spacing-xxl: 0.295rem; // 4.72px
 $font-spacing-xl: 0.2112rem; // 3.38px
 $font-spacing-lg: 0.1688rem; // 2.7px
 $font-spacing-md: 0.125rem; // 2px
 $font-spacing-sm: 0.0781rem; // 1.25px
 $font-spacing-lg2: 0.1475rem; // 2.36px
 
+$font-height-xl: 2rem; // 32px
 $font-height-lg: 1.75rem; // 28px
 $font-height-md: 1.5625rem; // 25px
 
@@ -46,10 +53,6 @@ $white: hsl(0, 0%, 100%);
 
 ///////////////////
 
-body {
-  margin: 0;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -61,6 +64,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.flex-c {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-r {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-c-r {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left {
+  margin-left: auto
 }
 
 .flex {
@@ -88,6 +111,10 @@ body {
       margin-bottom: 3.75rem;
     }
 
+    @include xl {
+      margin-left: 12.5rem;
+    }
+
     span {
       font-family: $font-barlow-c;
       letter-spacing: $font-spacing-lg;
@@ -98,6 +125,11 @@ body {
       @include md {
         font-size: $font-20;
         letter-spacing: $font-spacing-xl;
+      }
+
+      @include xl {
+        font-size: $font-28;
+        letter-spacing: $font-spacing-xxl;
       }
     }
 
@@ -110,6 +142,11 @@ body {
       @include md {
         font-size: 20px;
         letter-spacing: 3.38px;
+      }
+
+      @include xl {
+        font-size: $font-28;
+        letter-spacing: $font-spacing-xxl;
       }
     }
   }

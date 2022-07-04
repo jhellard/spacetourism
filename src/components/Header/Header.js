@@ -16,7 +16,7 @@ const Header = () => {
     setIsHambugerOpen(!isHambugerOpen);
   };
   return (
-    <header className="header">
+    <header className="header flex align-center">
       <img src={Logo} alt="Space Logo" className="header__logo" />
       <button className="header__menu" onClick={() => handleHambuger()} />
       <span className="nav__line" />
@@ -28,12 +28,11 @@ const Header = () => {
           onClick={() => handleHambuger()}
         />
 
-        <ul>
+        <ul className="nav__list">
           {Links.map((link, index) => (
             <Link
               key={index}
               to={link.url}
-              className="nav__route"
               onClick={() => {
                 handleHambuger();
               }}

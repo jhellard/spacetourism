@@ -1,27 +1,19 @@
 .header {
-  display: flex;
   position: relative;
-  align-items: flex-start;
   min-width: 100%;
   z-index: 2;
 
   @include md {
     justify-content: space-between;
-    
     margin-bottom: 2rem;
   }
 
   @include xl {
-    margin-top: 35.2px;
-    align-items: center;
-  }
-
-  &__logo,
-  &__menu {
-    margin: 1.75rem;
+    margin-top: 2.1875rem;
   }
 
   &__logo {
+    margin: 1.5rem;
     @include xl {
       margin-left: 56px;
     }
@@ -29,24 +21,16 @@
 
   &__menu {
     background: transparent;
-    width: 24px;
-    height: 21px;
+    width: 1.5rem; // 24px
+    height: 1.3125rem; // 21px
     background-image: url(../../assets/shared/icon-hamburger.svg);
     border: 0;
+    margin: 1.5rem;
     margin-left: auto;
 
     @include md {
       display: none;
     }
-  }
-
-  // &__nav {
-
-  //
-  // }
-
-  &__link {
-    height: 48px;
   }
 
   .nav {
@@ -58,15 +42,12 @@
     inset: 0;
     background: rgba(50, 50, 50, 0.5);
     backdrop-filter: blur(16px);
-    
 
     @include md {
       position: relative;
       visibility: visible;
-      justify-self: flex-end;
-      margin-left: 0;
       width: 60%;
-      height: 96px;
+      height: 6rem; // 96px
       min-height: auto;
       flex-direction: row;
       align-items: center;
@@ -79,16 +60,34 @@
     }
 
     &__line {
+      display: none;
+      z-index: 2;
+
       @include xl {
         position: absolute;
+        display: inline-block;
         min-width: 31.5%;
-        height: 1px;
+        height: 0.0625rem; // 1px
         background: $darkgray;
-        left: 200px;
+        left: 15%;
       }
     }
 
-    ul {
+    &__close {
+      margin: 2rem 1.5rem 2rem auto;
+      width: 24px; // 24px
+      height: 24px; // 24px
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include md {
+        display: none;
+      }
+    }
+
+    &__list {
       padding-left: 1rem;
       list-style: none;
       margin: 0;
@@ -108,8 +107,8 @@
       margin-bottom: 2.25rem;
 
       @include md {
-        font-size: 14px;
-        letter-spacing: 2.36px;
+        font-size: $font-14;
+        letter-spacing: $font-spacing-lg2;
         margin-bottom: 0;
       }
 
@@ -117,6 +116,7 @@
         border-right: 3px solid $white;
       }
     }
+
     &__number {
       font-weight: bold;
       color: $white;
@@ -128,20 +128,6 @@
 
       @include xl {
         display: initial;
-      }
-    }
-
-    &__close {
-      margin: 2rem 24px 2rem auto;
-      width: 24px;
-      height: 24px;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      @include md {
-        display: none;
       }
     }
   }

@@ -83,7 +83,7 @@ $white: hsl(0, 0%, 100%);
 }
 
 .left {
-  margin-left: auto
+  margin-left: auto;
 }
 
 .flex {
@@ -196,8 +196,7 @@ p {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   visibility: visible !important;
-  z-index: 2;
-
+  
   @include md {
     animation: none;
   }
@@ -212,4 +211,23 @@ p {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(150,150,150);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(50,50,50);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $darkgray;
 }
